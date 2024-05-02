@@ -1,11 +1,11 @@
 # Use the official Ruby image from Docker Hub
-FROM ruby:latest
+FROM ruby:2.7
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the container
-COPY Gemfile Gemfile.lock ./
+COPY app/Gemfile app/Gemfile.lock ./
 
 # Install dependencies using bundler
 RUN bundle install
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Define the command to run the application
-CMD ["ruby", "app.rb"]
+CMD ["ruby", "run", "start"]
