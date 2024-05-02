@@ -5,7 +5,7 @@ FROM ruby:2.7
 WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the container
-COPY app/Gemfile app/Gemfile.lock ./
+COPY app/Gemfile.lock ./
 
 # Install dependencies using bundler
 RUN bundle install
